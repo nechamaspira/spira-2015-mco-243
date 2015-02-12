@@ -7,14 +7,14 @@ public class MicroprocessorSimulation {
 	public static void main(String[] args) {
 
 		Scanner keyboard = new Scanner(System.in);
-		//System.out.println("enter in 256 hex characters");
+		// System.out.println("enter in 256 hex characters");
 		String letters = keyboard.nextLine();
 
 		char[] array = letters.toCharArray();
 		char code;
 		char accumulatorA = '0';
 		char accumulatorB = '0';
-		
+
 		int place;
 		int i = 0;
 		String s;
@@ -23,18 +23,16 @@ public class MicroprocessorSimulation {
 
 			switch (code) {
 			case '0':
-				 s = (String.valueOf(array[i+1]) + String.valueOf(array[i+2]));
-				//s = s.toUpperCase();
+				s = (String.valueOf(array[i + 1]) + String
+						.valueOf(array[i + 2]));
 				place = Integer.parseInt(s, 16);
-				//place = getDecimal(array[i + 1], array[i + 2]);
 				accumulatorA = array[place];
 				i = i + 3;
 				break;
 			case '1':
-				 s = (String.valueOf(array[i + 1]) + String.valueOf(array[i + 2]));
-				//s = s.toUpperCase();
+				s = (String.valueOf(array[i + 1]) + String
+						.valueOf(array[i + 2]));
 				place = Integer.parseInt(s, 16);
-				//place = getDecimal(array[i + 1], array[i + 2]);
 				array[place] = accumulatorA;
 				i = i + 3;
 				break;
@@ -45,14 +43,10 @@ public class MicroprocessorSimulation {
 				i++;
 				break;
 			case '3':
-				 s = (String.valueOf('0') + String.valueOf(accumulatorA));
-				//s = s.toUpperCase();
+				s = (String.valueOf('0') + String.valueOf(accumulatorA));
 				int A = Integer.parseInt(s, 16);
-				 s = (String.valueOf('0') + String.valueOf(accumulatorB));
-				//	s = s.toUpperCase();
-					int B = Integer.parseInt(s, 16);
-				//int A = getDecimal('0', accumulatorA);
-				//int B = getDecimal('0', accumulatorB);
+				s = (String.valueOf('0') + String.valueOf(accumulatorB));
+				int B = Integer.parseInt(s, 16);
 				int sum = A + B;
 				String hex = Integer.toHexString(sum);
 				hex = hex.toUpperCase();
@@ -90,13 +84,11 @@ public class MicroprocessorSimulation {
 				i++;
 				break;
 			case '6':
-				
-				
+
 				if (accumulatorA == '0') {
-					 s = (String.valueOf(array[i + 1]) + String.valueOf(array[i + 2]));
-				//	s = s.toUpperCase();
+					s = (String.valueOf(array[i + 1]) + String
+							.valueOf(array[i + 2]));
 					place = Integer.parseInt(s, 16);
-					//place = getDecimal(array[i + 1], array[i + 2]);
 					i = place;
 				} else {
 					i = i + 3;
@@ -104,10 +96,10 @@ public class MicroprocessorSimulation {
 
 				break;
 			case '7':
-				 s = (String.valueOf(array[i + 1]) + String.valueOf(array[i + 2]));
-					s = s.toUpperCase();
-					place = Integer.parseInt(s, 16);
-				//place = getDecimal(array[i + 1], array[i + 2]);
+				s = (String.valueOf(array[i + 1]) + String
+						.valueOf(array[i + 2]));
+				s = s.toUpperCase();
+				place = Integer.parseInt(s, 16);
 				i = place;
 				break;
 
