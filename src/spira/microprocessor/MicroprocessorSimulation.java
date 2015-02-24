@@ -112,14 +112,14 @@ public class MicroprocessorSimulation {
 		keyboard.close();
 	}
 
-	public static int getDecimal(char i, char j) {
+	/*public static int getDecimal(char i, char j) {
 
 		String s = (String.valueOf(i) + String.valueOf(j));
 		s = s.toUpperCase();
 		int number = Integer.parseInt(s, 16);
 
 		return number;
-		/*
+		
 		 * int first = 0; int second = 0;
 		 * 
 		 * if (i == 'A') { first = 10 * 16; } else if (i == 'B') { first = 11 *
@@ -133,7 +133,7 @@ public class MicroprocessorSimulation {
 		 * 
 		 * String it = String.valueOf(j); second = Integer.parseInt(it); } int
 		 * sum = first + second; return sum;
-		 */
-	}
+		 
+	}*/
 
 }
