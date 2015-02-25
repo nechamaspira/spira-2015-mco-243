@@ -35,7 +35,11 @@ public class Compiler {
 			}
 			line = keyboard.nextLine();
 
-		} while (!line.equals(String.valueOf(-1)));
+			if(line.equals(String.valueOf(-1))){
+				break;
+			}
+		} while (keyboard.hasNext());
+	//} while (!line.equals(String.valueOf(-1)));
 
 		do {
 			String entireCode = instructions.get(j);
@@ -150,6 +154,7 @@ public class Compiler {
 			
 			case "DATA":
 				hexNumber = Integer.toHexString(Integer.parseInt(words[2]));
+				hexNumber = hexNumber.toUpperCase();
 				array[Integer.parseInt(words[1])] = hexNumber.charAt(0);
 				break;
 			}	
