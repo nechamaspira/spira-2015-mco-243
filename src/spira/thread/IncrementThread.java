@@ -9,9 +9,9 @@ public class IncrementThread extends Thread {
 	// static int number = 0;
 
 	private AtomicInteger number = new AtomicInteger(0);
-	// when something is atomic that means it was done in on eoperation.
+	// when something is atomic that means it was done in on operation.
 	// smallest slices... it is regular operation just can do regular
-	// operations..like increnent and get method whic are synchronized, it will
+	// operations..like increment and get method whic are synchronized, it will
 	// return an int
 
 	// static Semaphore semaphore = new Semaphore(1,true);
