@@ -4,9 +4,9 @@ import java.util.List;
 
 public class FirstInFirstOut implements SchedulerAlgorithm{
 
-	public boolean preemtive;
+	//public boolean preemtive;
 	public FirstInFirstOut(){
-		preemtive = false;
+		//preemtive = false;
 	}
 	
 	@Override
@@ -17,7 +17,8 @@ public class FirstInFirstOut implements SchedulerAlgorithm{
 
 	@Override
 	public Boolean isPreemtive() {
-		return preemtive;
+		//return preemtive;
+		return false;
 	}
 	
 	

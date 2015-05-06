@@ -4,9 +4,9 @@ import java.util.List;
 
 public class ShortestProcessFirst implements SchedulerAlgorithm {
 
-	public boolean preemtive;
+	//public boolean preemtive;
 	public ShortestProcessFirst(){
-		preemtive = false;
+		//preemtive = false;
 	}
 	
 	@Override
@@ -31,7 +31,8 @@ public class ShortestProcessFirst implements SchedulerAlgorithm {
 
 	@Override
 	public Boolean isPreemtive() {
-		return preemtive;
+		//return preemtive;
+		return false;
 	}
 	
 

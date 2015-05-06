@@ -22,23 +22,12 @@ public class Schedular {
 			FakeProcess process = algorithm.getNextProcess(list);
 			list.remove(process);// remove from list
 			if (algorithm.isPreemtive()) {
-				process.run(QUANTUM);// run for certain amnt of time, reduces
-										// the amnt of time to run
-				// need process and make algorithm
-				// gonna write first in first out scheduler, 344
-				// cr8 shortest process first scheduler 348
-				// do one based on priority pg 360 - execute proceses based on
-				// priority. if process hasnt executed increase its priotity
-				// cr8 processees all diff types...
-				// run program for 100 iterations of this run method and see how
-				// many processes u complete and tell me which one is best
-
-				// only preemtive
-				if (process.isStillRunning()) {// if still running add it to
-												// list
+				process.run(QUANTUM);
+				process.setTimeRan(System.currentTimeMillis());
+				
+				if (process.isStillRunning()) {
 					list.add(process);
 				}
-
 			}
 			else{
 				process.run(process.getTimeToCompletion());
