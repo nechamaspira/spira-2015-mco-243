@@ -20,7 +20,4 @@ public class FirstInFirstOut implements SchedulerAlgorithm{
 		//return preemtive;
 		return false;
 	}
-	
-	
-
 }
