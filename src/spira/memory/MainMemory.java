@@ -3,26 +3,26 @@ package spira.memory;
 public class MainMemory {
 
 	private int totalBytes;
-	private String[][] memory;
+	private char[][] memory;
 
 	MainMemory(int totalBytes) {
 		this.totalBytes = totalBytes;
-		this.memory = new String[totalBytes / 128][128];
+		this.memory = new char[totalBytes / 128][128];
 
 		for (int i = 0; i < memory.length; i++) {
 			for (int j = 0; j < memory[i].length; j++) {
-				memory[i][j] = "-";
+				memory[i][j] = '-';
 			}
 		}
 
 	}
 
 	public boolean allocate(int processID, int numBytes) {
-		
+
 		int amount = 0;
 		for (int i = 0; i < memory.length; i++) {
 			for (int j = 0; j < memory[i].length; j++) {
-				if (memory[i][j].equals(String.valueOf('-'))) {
+				if (memory[i][j]=='-') {
 					amount++;
 				}
 			}
@@ -40,9 +40,9 @@ public class MainMemory {
 
 		for (int i = 0; i < memory.length; i++) {
 			for (int j = 0; j < memory[i].length; j++) {
-				if (memory[i][j].equals(String.valueOf('-'))) {
+				if (memory[i][j]=='-') {
 					amount++;
-					memory[i][j] = String.valueOf(processID);
+					memory[i][j] = (char) processID;
 
 				}
 				if (amount == numBytes) {
@@ -56,15 +56,15 @@ public class MainMemory {
 
 		for (int i = 0; i < memory.length; i++) {
 			for (int j = 0; j < memory[i].length; j++) {
-				if (memory[i][j].equals(String.valueOf(pid))) {
-					memory[i][j] = "-";
+				if (memory[i][j] == pid) {
+					memory[i][j] = '-';
 				}
 			}
 		}
 
 	}
 
-	public String print() { 
+	public String print() {
 		StringBuilder info = new StringBuilder();
 
 		for (int i = 0; i < memory.length; i++) {
@@ -90,18 +90,17 @@ public class MainMemory {
 		if (!bool2) {
 			System.out.println("There is not enough memory for process 2");
 		}
-		boolean bool3 =mem.allocate(3, 400);
+		boolean bool3 = mem.allocate(3, 400);
 		if (!bool3) {
 			System.out.println("There is not enough memory for process 3");
 		}
-		
+
 		boolean bool4 = mem.allocate(4, 250);
 		if (!bool4) {
 			System.out.println("There is not enough memory for process 4");
 		}
 		System.out.println(mem.print());
-		
-		
+
 		MainMemory memory = new MainMemory(1280);
 
 		boolean boo1 = memory.allocate(1, 300);
@@ -112,7 +111,7 @@ public class MainMemory {
 		if (!boo2) {
 			System.out.println("There is not enough memory for process 2");
 		}
-		boolean boo3 =memory.allocate(3, 400);
+		boolean boo3 = memory.allocate(3, 400);
 		if (!boo3) {
 			System.out.println("There is not enough memory for process 3");
 		}
@@ -122,7 +121,7 @@ public class MainMemory {
 		if (!boo4) {
 			System.out.println("There is not enough memory for process 4");
 		}
-		boolean boo5= memory.allocate(4, 500);
+		boolean boo5 = memory.allocate(4, 500);
 		if (!boo5) {
 			System.out.println("There is not enough memory for process 5");
 		}
